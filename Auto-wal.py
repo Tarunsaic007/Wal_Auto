@@ -13,11 +13,11 @@ def run(playwright: Playwright) -> None:
     url_2="https://careers.walmart.ca/search-jobs/Toronto%2C%20Ontario/4853/4/6251999-6093943-6167865/43x70011/-79x4163/50/2"
     url_3="https://careers.walmart.ca/search-jobs/Brampton%2C%20Ontario/4853/4/6251999-6093943-5907364/43x68341/-79x76633/50/2"
     url_4="https://careers.walmart.ca/search-jobs/Oshawa%2C%20Ontario/4853/4/6251999-6093943-6094578/43x90012/-78x84957/50/2"
-    for i in range(1, 3):  
+    for i in range(1, 5):  
         url = locals()[f'url_{i}']  
         page.goto(url)
 
-        for i in range(1, 3):  # Loop to click first 5 job links
+        for i in range(1, 4):  # Loop to click first 5 job links
         # for i in range (3):
             job_link = page.locator(f"#search-results-list > ul > li:nth-child({i}) > a")
             # job_link = page.locator(f"#search-results-list > ul > li:nth-child(5) > a")
