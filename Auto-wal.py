@@ -103,8 +103,8 @@ def run(playwright: Playwright) -> None:
 
             except Exception as e:
                 print(f"An error occurred at job link {i}: {e}")
-                # page.goto("https://careers.walmart.ca/search-jobs/Centennial%20Scarborough%2C%20Ontario/4853/4/6251999-6093943-8133394-12156827/43x78238/-79x15084/50/2")
-                page.goto("https://careers.walmart.ca/search-jobs/Waterloo%2C%20Ontario/4853/4/6251999-6093943-6176823/43x4668/-80x51639/50/2")
+                page.goto(url)
+                # page.goto("https://careers.walmart.ca/search-jobs/Waterloo%2C%20Ontario/4853/4/6251999-6093943-6176823/43x4668/-80x51639/50/2")
                 continue  # Skip to the next iteration if an error occurs
 
     context.close()
