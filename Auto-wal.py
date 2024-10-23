@@ -9,10 +9,10 @@ def run(playwright: Playwright) -> None:
     context.clear_cookies()
     context.clear_permissions()
     page = context.new_page()
-    # url_1="https://careers.walmart.ca/search-jobs/Waterloo%2C%20Ontario/4853/4/6251999-6093943-6176823/43x4668/-80x51639/50/2"
-    # url_2="https://careers.walmart.ca/search-jobs/Toronto%2C%20Ontario/4853/4/6251999-6093943-6167865/43x70011/-79x4163/50/2"
-    url_1="https://careers.walmart.ca/search-jobs/Brampton%2C%20Ontario/4853/4/6251999-6093943-5907364/43x68341/-79x76633/50/2"
-    url_2="https://careers.walmart.ca/search-jobs/Oshawa%2C%20Ontario/4853/4/6251999-6093943-6094578/43x90012/-78x84957/50/2"
+    url_1="https://careers.walmart.ca/search-jobs/Scarborough%20Bluffs%20Park%2C%20Ontario/4853/4/6251999-6093943-6141897/43x70213/-79x24318/50/2"
+    url_2="https://careers.walmart.ca/search-jobs/Toronto%2C%20Ontario/4853/4/6251999-6093943-6167865/43x70011/-79x4163/50/2"
+    url_3="https://careers.walmart.ca/search-jobs/Brampton%2C%20Ontario/4853/4/6251999-6093943-5907364/43x68341/-79x76633/50/2"
+    url_4="https://careers.walmart.ca/search-jobs/Oshawa%2C%20Ontario/4853/4/6251999-6093943-6094578/43x90012/-78x84957/50/2"
     for i in range(1, 3):  
         url = locals()[f'url_{i}']  
         page.goto(url)
@@ -31,7 +31,7 @@ def run(playwright: Playwright) -> None:
                 page.wait_for_load_state("networkidle")
                 if page.locator("label[for='input-4']").count() > 0:
                     try:
-                        page.get_by_label("Email Address").fill("techiebears007@gmail.com")
+                        page.get_by_label("Email Address").fill("tarunsaic0007@gmail.com")
                         page.get_by_label("Password").fill("Tarunc007@")
                         page.get_by_label("Sign In").click()
                         page.get_by_label("How Did You Hear About Us?*").click()
