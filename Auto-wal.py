@@ -32,6 +32,7 @@ def run(playwright: Playwright) -> None:
                 if page.locator("label[for='input-4']").count() > 0:
                     try:
                         page.get_by_label("Email Address").fill("tarunsaic0007@gmail.com")
+                        # page.get_by_label("Email Address").fill("techiebears007@gmail.com")
                         page.get_by_label("Password").fill("Tarunc007@")
                         page.get_by_label("Sign In").click()
                         page.get_by_label("How Did You Hear About Us?*").click()
@@ -60,15 +61,25 @@ def run(playwright: Playwright) -> None:
                 
                 page.get_by_label("Would you like to receive").click()
                 page.get_by_text("Opt-Out – you will NOT").click()
+                # page.get_by_label("Are you legally able to work").click()
+                # page.get_by_role("option", name="Yes").locator("div").click()
+                # page.get_by_label("Please select your age").click()
+                # page.get_by_text("years of age and Over").click()
+                page.get_by_text("Are you legally able to work in the country where this job is located?", exact=True).click()
                 page.get_by_label("Are you legally able to work").click()
                 page.get_by_role("option", name="Yes").locator("div").click()
+                page.get_by_text("Please select your age category:", exact=True).click()
                 page.get_by_label("Please select your age").click()
                 page.get_by_text("years of age and Over").click()
-                
+                page.get_by_text("Are you able to provide your SIN number within 3 days of your hire?", exact=True).click()
                 page.get_by_label("Are you able to provide your").click()
-                page.get_by_role("option", name="Yes").locator("div").click()
+                page.get_by_role("option", name="Yes").locator("div").click() 
+                # page.get_by_label("Are you able to provide your").click()
+                # page.get_by_role("option", name="Yes").locator("div").click()
+                page.get_by_text("Please select your Walmart Associate Status/Affiliation:", exact=True).click()
                 page.get_by_label("Please select your Walmart").click()
-                page.get_by_text("Have never been an employee").click()
+                page.get_by_role("option", name="Have never been an employee").locator("div").click()
+
                 page.get_by_label("Walmart is an equal").click()
                 page.get_by_role("option", name="Yes").locator("div").click()
                 page.get_by_label("Have you ever been charged or").click()
@@ -99,7 +110,7 @@ def run(playwright: Playwright) -> None:
 
                 # page.get_by_role("button", name="Submit").click()
 
-                time.sleep(4)
+                time.sleep(2)
 
             except Exception as e:
                 print(f"An error occurred at job link {i}: {e}")
