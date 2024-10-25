@@ -17,14 +17,14 @@ def run(playwright: Playwright) -> None:
         url = locals()[f'url_{i}']  
         page.goto(url)
 
-        for i in range(1, 4):  # Loop to click first 5 job links
+        for i in range(1, 4):  # Loop to click first 3 job links
         # for i in range (3):
             job_link = page.locator(f"#search-results-list > ul > li:nth-child({i}) > a")
             # job_link = page.locator(f"#search-results-list > ul > li:nth-child(5) > a")
 
             try:
                 job_link.wait_for()
-                job_link.click(timeout=3000)
+                job_link.click()
                 page.locator("#ajd-header").get_by_role("link", name="Apply").click()
                 page.get_by_role("button", name="Apply").click()
                 page.get_by_role("button", name="Use My Last Application").click()
