@@ -2,7 +2,7 @@ name: Run Script Every 24 Minutes
 
 on:
   schedule:
-    - cron: '*/24 * * * *'
+    - cron: '*/1 * * * *'
   workflow_dispatch:
 
 jobs:
