@@ -1,4 +1,4 @@
-name: Run Script Every 24 Minutes
+name: Run Script Every 10 Minutes
 
 on:
   schedule:
